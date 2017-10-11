@@ -1,0 +1,34 @@
+{
+  "name": "user-management",
+  "version": "1.0.0",
+  "description": "成都食药监-用户管理",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack --config webpack.config.js",
+    "buildPro": "webpack",
+    "buildWatch": "set NODE_ENV=development&&webpack --watch",
+    "buildDevServer": "set NODE_ENV=development&& webpack-dev-server --open&& webpack"
+  },
+  "keywords": [
+    "CDFDA",
+    "userManagement"
+  ],
+  "author": "david",
+  "license": "ISC",
+  "devDependencies": {
+    "clean-webpack-plugin": "^0.1.17",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.1",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.4"
+  }
+}
