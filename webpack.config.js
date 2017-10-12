@@ -17,7 +17,7 @@ const extractSass = new ExtractTextPlugin({
     disable: isDevEnv
 });
 
-const useHRM = false;
+const useHRM = true;
 
 const tempConfig = {
     entry: {
@@ -64,7 +64,8 @@ const tempConfig = {
         }),extractSass
     ],
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        openPage: 'main.html'
     }
 }
 
@@ -77,8 +78,9 @@ if (isDevEnv) {
     });
     if (useHRM) {
         tempConfig.entry = './src/feature/main.js';
+        tempConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
     }
-    tempConfig.plugins.push(new webpack.HotModuleReplacementPlugin());
+    
 } else {
     _.defaultsDeep(tempConfig, {
     //  webpack-dev-server监听文件改变重新构建并刷新浏览器
